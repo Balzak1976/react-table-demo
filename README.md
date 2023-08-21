@@ -1,3 +1,5 @@
 # React Table Course
 
-Курс по библиотеке TanStack Table
+### Создание таблицы сортировки
+
+![Создание таблицы сортировки](./screenshots/sorttable.png)
