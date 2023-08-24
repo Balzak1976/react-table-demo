@@ -1,10 +1,10 @@
 import './App.css';
-import { FilteringTable } from './components/FilteringTable';
+import MyTable from './components/MyTable';
 
 function App() {
   return (
     <div className="App">
-      <FilteringTable/>
+      <MyTable/>
     </div>
   );
 }
