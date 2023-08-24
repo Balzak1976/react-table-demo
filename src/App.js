@@ -1,13 +1,12 @@
 import './App.css';
-import MySortingTable from './components/MySortingTable';
+import MyFilteringTable from './components/MyFilteringTableWithSorting';
 
 function App() {
-  return (
-    <div className="App">
-      
-      <MySortingTable/>
-    </div>
-  );
+	return (
+		<div className='App'>
+			<MyFilteringTable />
+		</div>
+	);
 }
 
 export default App;
