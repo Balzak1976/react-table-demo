@@ -22,16 +22,16 @@ export const PaginationTable = () => {
 		pageOptions,
 		pageCount,
 		gotoPage,
-		state: {pageIndex}
-	} =
-		useTable(
-			{
-				columns,
-				data,
-				initialState: { pageIndex: 4}
-			},
-			usePagination,
-		);
+		setPageSize,
+		state: { pageIndex, pageSize },
+	} = useTable(
+		{
+			columns,
+			data,
+			initialState: { pageIndex: 4 },
+		},
+		usePagination
+	);
 
 	return (
 		<>
@@ -69,21 +69,35 @@ export const PaginationTable = () => {
 			</table>
 			<div>
 				<span>
-					Page{' '}
-					{pageIndex + 1} {`of ${pageOptions.length} `}
+					Page {pageIndex + 1} {`of ${pageOptions.length} `}
 				</span>
 				<input
-					type="number"
+					type='number'
 					defaultValue={pageIndex + 1}
-					onChange={(e) => { 
+					onChange={(e) => {
 						const page = e.target.value ? Number(e.target.value) - 1 : 0;
 						gotoPage(page);
-					 }}
+					}}
 				/>
-				<button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>{'<<'}</button>
-				<button onClick={() => previousPage() } disabled={!canPreviousPage}>Previous</button>
-				<button onClick={() => nextPage()} disabled={!canNextPage}>Next</button>
-				<button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>{'>>'}</button>
+				<select value={pageSize} onChange={(e) => setPageSize(Number(e.target.value))}>
+					{[10, 15, 20].map((pageSize) => (
+						<option value={pageSize} key={pageSize}>
+							Show {pageSize}
+						</option>
+					))}
+				</select>
+				<button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
+					{'<<'}
+				</button>
+				<button onClick={() => previousPage()} disabled={!canPreviousPage}>
+					Previous
+				</button>
+				<button onClick={() => nextPage()} disabled={!canNextPage}>
+					Next
+				</button>
+				<button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
+					{'>>'}
+				</button>
 			</div>
 		</>
 	);
