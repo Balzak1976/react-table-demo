@@ -19,3 +19,7 @@
 ### Создание таблицы с простой пагинацией
 
 ![Создание таблицы с простой пагинацией](./screenshots/simplePaginationTable.png)
+
+### Создание таблицы с пагинацией goto page
+
+![Создание таблицы с простой пагинацией](./screenshots/gotoPagePagination.png)
