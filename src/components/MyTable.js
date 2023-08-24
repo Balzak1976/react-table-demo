@@ -1,11 +1,11 @@
 import React, { useMemo } from 'react';
 import { useTable } from 'react-table';
 import MOCK_DATA from './MOCK_DATA.json';
-import { COLUMNS } from './columns';
+import { MY_COLUMNS } from './myGroupColumns';
 import './table.css';
 
 function MyTable() {
-	const columns = useMemo(() => COLUMNS, []);
+	const columns = useMemo(() => MY_COLUMNS, []);
 	const data = useMemo(() => MOCK_DATA, []);
 
 	const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable({ columns, data });
