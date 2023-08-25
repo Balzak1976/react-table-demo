@@ -24,3 +24,7 @@ table th, tfoot td {
 pre {
   text-align: left;
 }
+
+.checkbox__col-hiding {
+  text-align: left;
+}
