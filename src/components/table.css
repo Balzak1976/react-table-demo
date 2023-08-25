@@ -20,3 +20,7 @@ table th, tfoot td {
   background-color: #04AA6D;
   color: white;
 }
+
+pre {
+  text-align: left;
+}
